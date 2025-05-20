@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/cerberus';
+
+@import '@fontsource-variable/nunito-sans';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+body {
+	font-family: 'Nunito Sans Variable', sans-serif;
+}
+
+hr {
+	color: #7e7e7e;
+}
+
+[data-theme='cerberus'] body {
+	background-image:
+		radial-gradient(
+			at 24% 25%,
+			color-mix(in oklab, var(--color-primary-500) 30%, transparent) 0px,
+			transparent 30%
+		),
+		radial-gradient(
+			at 35% 13%,
+			color-mix(in oklab, var(--color-success-500) 18%, transparent) 0px,
+			transparent 30%
+		),
+		radial-gradient(
+			at 100% 64%,
+			color-mix(in oklab, var(--color-error-500) 3%, transparent) 0px,
+			transparent 40%
+		);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+[data-theme='cerberus'] {
+	--heading-font-family: 'Open Sans', sans-serif;
+	--base-font-family: 'Open Sans', sans-serif;
+	--anchor-font-family: 'inherit';
+}
+
+[data-theme='cerberus'][data-mode='light'] body {
+	background-image:
+		radial-gradient(
+			at 24% 25%,
+			color-mix(in oklab, var(--color-primary-100) 30%, transparent) 0px,
+			transparent 30%
+		),
+		radial-gradient(
+			at 35% 13%,
+			color-mix(in oklab, var(--color-success-100) 18%, transparent) 0px,
+			transparent 30%
+		),
+		radial-gradient(
+			at 100% 64%,
+			color-mix(in oklab, var(--color-error-100) 3%, transparent) 0px,
+			transparent 40%
+		);
+	background-color: white;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+}
+
+@keyframes scroll-gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 400% 0%;
+	}
+}
+
+.scroll-gradient {
+	/* Largeur 400% pour 4 répétitions */
+	background-size: 400% 100%;
+	/* Gradient avec répétitions pour boucle fluide */
+	background-image: linear-gradient(
+		to right,
+		#bfdbfe 0%,
+		/* from-blue-200 */ #c0aded 25%,
+		/* to-purple-500 */ #bfdbfe 50%,
+		#a677c5 75%,
+		#bfdbfe 100%
+	);
+	animation: scroll-gradient 20s linear infinite;
+}
