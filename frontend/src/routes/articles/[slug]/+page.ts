@@ -4,7 +4,7 @@ import { marked } from 'marked';
 export async function load({ params }) {
 	const { slug } = params;
 
-	const res = await fetch(`http://127.0.0.1:8000/articles/${slug}`);
+	const res = await fetch(`https://zefustrategie.onrender.com/articles/${slug}`);
 	if (!res.ok) throw error(404, 'Article non trouvé');
 
 	const { metadata, content } = await res.json();

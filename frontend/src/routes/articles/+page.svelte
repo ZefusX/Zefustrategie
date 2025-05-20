@@ -14,7 +14,7 @@
 
 	// Récupère la liste des slugs
 	async function getSlugs() {
-		const res = await fetch('http://127.0.0.1:8000/articles');
+		const res = await fetch('https://zefustrategie.onrender.com/articles');
 		slugs = await res.json();
 	}
 
