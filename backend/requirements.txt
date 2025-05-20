@@ -177,7 +177,6 @@ pytweening==1.0.4
 pytz==2023.3.post1
 pyvis==0.3.2
 pywhatkit==5.4
-pywin32
 PyYAML==6.0.1
 pyzmq==24.0.1
 reedsolo==1.7.0
