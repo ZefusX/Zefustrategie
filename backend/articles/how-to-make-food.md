@@ -2,7 +2,7 @@
 title: "Introduction à FastAPI"
 description: "Un guide rapide pour démarrer avec FastAPI en Python."
 tags: ["python", "api", "fastapi"]
-date: "2025-05-19"
+date: "2025-05-15"
 author: "Jean Dupont"
 ---
 
