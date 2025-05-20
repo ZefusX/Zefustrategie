@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SortAscIcon, SortDescIcon } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 
 	function formatDate(dateStr: any) {
@@ -11,7 +12,7 @@
 	}
 	let slugs: any[] = [];
 	let articles: any[] = [];
-
+	let sortDateInversed = false;
 	// Récupère la liste des slugs
 	async function getSlugs() {
 		const res = await fetch('https://zefustrategie.onrender.com/articles');
@@ -29,9 +30,33 @@
 		articles = await Promise.all(promises);
 	}
 
+	function sortArticlesByDate(articlesList: any) {
+		sortDateInversed = false;
+		return articlesList.sort(
+			(a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime()
+		);
+	}
+	function sortArticlesByDateInversed(articlesList: any) {
+		sortDateInversed = true;
+		return articlesList.sort(
+			(a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()
+		);
+	}
+
+	function toggleSortOrder() {
+		sortDateInversed = !sortDateInversed;
+		if (sortDateInversed === false) {
+			articles = sortArticlesByDate(articles);
+		} else {
+			articles = sortArticlesByDateInversed(articles);
+		}
+	}
+
 	onMount(async () => {
 		await getSlugs();
 		await getArticles();
+		articles = sortArticlesByDate(articles);
+		console.log(articles);
 	});
 </script>
 
@@ -42,7 +67,22 @@
 		Zefustratégie
 	</h1>
 	<hr class="mr-96 mt-6" />
-	<div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+	{#if sortDateInversed}
+		<button
+			onclick={toggleSortOrder}
+			class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
+		>
+			<SortAscIcon />
+		</button>
+	{:else}
+		<button
+			onclick={toggleSortOrder}
+			class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
+		>
+			<SortDescIcon />
+		</button>
+	{/if}
+	<div class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 		{#if articles.length > 0}
 			{#each articles as article}
 				<a
@@ -53,7 +93,15 @@
 					<article class="space-y-4 p-4">
 						<div>
 							<h2 class="h6">{formatDate(article.date)}</h2>
-							<h3 class="h3">{article.title}</h3>
+						</div>
+						<h3 class="h3">{article.title}</h3>
+
+						<div class="flex gap-4">
+							{#each article.tags as tag}
+								<div class="rounded-xl border border-amber-200 bg-amber-200/20 p-1 px-2">
+									<p>{tag}</p>
+								</div>
+							{/each}
 						</div>
 						<p class="opacity-60">
 							{article.description}
