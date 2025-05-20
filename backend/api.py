@@ -11,7 +11,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://zefustrategie.onrender.com"],  # A changer une fois l'url du site fait
+    allow_origins=["https://zefustrategie.onrender.com", "https://zefustrategie.vercel.app"],  # A changer une fois l'url du site fait
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
