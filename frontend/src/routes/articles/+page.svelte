@@ -21,7 +21,7 @@
 	// Pour chaque slug, récupère les métadonnées
 	async function getArticles() {
 		const promises = slugs.map(async (slug) => {
-			const res = await fetch(`http://127.0.0.1:8000/articles/${slug}`);
+			const res = await fetch(`https://zefustrategie.onrender.com/articles/${slug}`);
 			const data = await res.json();
 			console.log(data.metadata);
 			return { slug, ...data.metadata };
