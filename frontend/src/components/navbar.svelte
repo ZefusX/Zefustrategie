@@ -38,7 +38,7 @@
 
 			<a
 				href="/contact"
-				class="nav-link transition hover:text-pink-500 {currentPath === '/'
+				class="nav-link transition hover:text-pink-500 {currentPath === '/contact'
 					? 'text-white'
 					: 'text-slate-300'}"
 			>
