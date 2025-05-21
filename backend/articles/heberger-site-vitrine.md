@@ -9,7 +9,7 @@ author: "Théo K."
 # Héberger un site vitrine
 
 Pour héberger un site vitrine, rien de plus simple, rendez vous sur GitHub, importez votre projet (si ce n'est pas déjà fait), puis allez dans "Settings" et "Pages".
-![](Pasted%20image%2020250521191145.png)
+![](images/example-github-page.png)
 _Petit exemple pour illustrer où aller_
 Ensuite suivez les instruction (généralement avec du HTML ça prend moins d'une minute) et rendez vous à votre URL.
 Le site sera en ligne avec comme url : `https://{nom-utilisateur}/github.io/{nom-projet}`

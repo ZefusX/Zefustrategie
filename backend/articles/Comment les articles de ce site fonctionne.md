@@ -19,9 +19,9 @@ De plus, pour fonctionner, j'utilise **SvelteKit** pour le **frontend** et **Fas
 
 - J'ai un dossier "articles" où je stock les articles en format Markdown _(.md)_
 - J'ai ensuite une fonction qui récupère les fichiers de ce dossier avec une fonction `get_article_list()` qui servira plus tard dans le frontend
-  ![image de la fonction](<images/get_article_list().png>)
+  ![](images/get_article_list().png)
 - Puis, pour la dernière fonction (et oui que 2 fonctions !), elle permet de récupérer le contenu des articles `get_article_content()`.
-  ![image de la fonction](<images/get_article_content().png>)
+  ![](images/get_article_content().png)
   Cette fonction fait appel à une autre fonction présente dans un autre fichier (utils.py) qui sert à séparer le contenu des metadatas du markdown car un fichier markdown se présente comme :
   ![image de la fonction](images/exemple_markdown.png)
   Il faut donc récupérer ce qui est entre tiret et le contenu qui prend place ensuite.
