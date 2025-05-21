@@ -4,9 +4,9 @@
 	$: currentPath = $page.url.pathname;
 </script>
 
-<div class="flex w-full">
+<div class="z-8 flex w-full">
 	<div
-		class="navbar center fixed left-1/2 my-2 mb-4 -translate-x-1/2 transform justify-center rounded-2xl bg-black/20 shadow-md backdrop-blur-md"
+		class="z-8 navbar center fixed left-1/3 my-2 mb-4 -translate-x-1/4 transform justify-center rounded-2xl bg-black/20 shadow-md backdrop-blur-md"
 	>
 		<nav class="mx-22 my-2 flex gap-12 text-xl font-semibold text-slate-300">
 			<a
@@ -34,6 +34,15 @@
 					: 'text-slate-300'}"
 			>
 				A propos
+			</a>
+
+			<a
+				href="/contact"
+				class="nav-link transition hover:text-pink-500 {currentPath === '/'
+					? 'text-white'
+					: 'text-slate-300'}"
+			>
+				Contact
 			</a>
 
 			<ToggleTheme />
@@ -69,6 +78,9 @@
 	}
 	:global([data-mode='light'] .nav-link[href='/about']:hover) {
 		color: #be185d; /* pink-700 */
+	}
+	:global([data-mode='light'] .nav-link[href='/contact']:hover) {
+		color: #741414; /* pink-700 */
 	}
 
 	:global([data-mode='light'] .navbar) {

@@ -1,5 +1,5 @@
 <script>
-	import { Book, FileQuestion, Home, Menu } from '@lucide/svelte';
+	import { Book, ContactIcon, FileQuestion, Home, Menu } from '@lucide/svelte';
 	let isExpansed = $state(false);
 
 	function toggleExpanded() {
@@ -23,9 +23,14 @@
 				<Book /> Blog
 			</button>
 		</a>
-		<a href="/">
+		<a href="/about">
 			<button class="flex flex-row justify-center gap-2">
 				<FileQuestion /> A propos
+			</button>
+		</a>
+		<a href="/contact">
+			<button class="flex flex-row justify-center gap-2">
+				<ContactIcon /> Contact
 			</button>
 		</a>
 	{/if}
