@@ -79,7 +79,7 @@ hr {
 	}
 }
 
-[data-mode='dark'] .scroll-gradient {
+.scroll-gradient {
 	/* Largeur 400% pour 4 répétitions */
 	background-size: 400% 100%;
 	/* Gradient avec répétitions pour boucle fluide */
@@ -87,7 +87,7 @@ hr {
 		to right,
 		#bfdbfe 0%,
 		/* from-blue-200 */ #c0aded 25%,
-		/* to-purple-500 */ #bfdbfe 50%,
+		/* to-purple-500 */ #abe7ff 50%,
 		#a677c5 75%,
 		#bfdbfe 100%
 	);
