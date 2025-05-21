@@ -117,8 +117,8 @@
 			{#each articles as article}
 				<a
 					href={`/articles/${article.slug}`}
-					class="card border-surface-200-800 card-hover divide-surface-200-800 block max-w-md
-       divide-y overflow-hidden rounded-xl border bg-white/10 shadow-md backdrop-blur-md"
+					class="card border-surface-200-800 card-hover divide-surface-200-800 z-0 block
+       max-w-md divide-y overflow-hidden rounded-xl border bg-white/10 shadow-md backdrop-blur-md"
 				>
 					<article class="space-y-4 p-4">
 						<div>
