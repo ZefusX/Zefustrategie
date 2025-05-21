@@ -15,7 +15,7 @@ De plus, pour fonctionner, j'utilise **SvelteKit** pour le **frontend** et **Fas
 
 # Backend
 
-Mon backend est extrêmement simple :
+[!INFO] Mon backend est extrêmement simple :
 
 - J'ai un dossier "articles" où je stock les articles en format Markdown _(.md)_
 - J'ai ensuite une fonction qui récupère les fichiers de ce dossier avec une fonction `get_article_list()` qui servira plus tard dans le frontend
