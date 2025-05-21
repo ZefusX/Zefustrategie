@@ -5,6 +5,7 @@ import yaml
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from utils import *
 
 app = FastAPI()
@@ -16,7 +17,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+app.mount("/static", StaticFiles(directory="articles"), name="static")
 @app.get("/articles")
 def get_article_list():
     files = os.listdir("./articles")

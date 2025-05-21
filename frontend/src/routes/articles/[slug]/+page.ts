@@ -9,9 +9,15 @@ export async function load({ params }) {
 
 	const { metadata, content } = await res.json();
 
-	// Convertit les bloc [!NOTE]
+	// Convertit les blocs [!NOTE]
 	const parsedMarkdown = parseAdmonitions(content);
-	const html = await marked.parse(parsedMarkdown);
+
+	// Réécrit les chemins d'image relatifs (pour les appeler)
+	const baseUrl = 'https://zefustrategie.onrender.com';
+	const withImagePaths = rewriteImagePaths(parsedMarkdown, baseUrl);
+
+	// Transforme en HTML (-> avec Marked goatesque)
+	const html = await marked.parse(withImagePaths);
 
 	return {
 		metadata,
@@ -47,4 +53,14 @@ function parseAdmonitions(md: string): string {
 			</div>`;
 		}
 	);
+}
+
+function rewriteImagePaths(md: string, baseUrl: string): string {
+	return md.replace(/!\[(.*?)\]\((.*?)\)/g, (_match, alt, src) => {
+		// Ignore les liens absolus
+		if (/^https?:\/\//.test(src)) return `![${alt}](${src})`;
+
+		// Sinon on ajoute le chemin vers l'API
+		return `![${alt}](${baseUrl}/static/${src})`;
+	});
 }

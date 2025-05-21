@@ -16,5 +16,5 @@ FastAPI est un framework web moderne et rapide...
 ca peut paraitre fou
 ```
 
-![Mon image](./assets/image.jpg)
+![Mon image](images/image.jpg)
 _bakaaa_
