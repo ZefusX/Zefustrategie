@@ -8,10 +8,10 @@
 </script>
 
 <div class="background-blur">
-	<div class="block lg:hidden">
+	<div class="z-9 block lg:hidden">
 		<MobileNavbar />
 	</div>
-	<div class="hidden lg:block">
+	<div class="z-9 hidden lg:block">
 		<Navbar />
 	</div>
 	<div class="pt-20">
