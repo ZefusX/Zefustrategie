@@ -11,8 +11,11 @@
 		}).format(date);
 	}
 	let slugs: any[] = [];
+	let allArticles: any[] = []; // contient tous les articles
 	let articles: any[] = [];
 	let sortDateInversed = false;
+	let searchInput = '';
+
 	// Récupère la liste des slugs
 	async function getSlugs() {
 		const res = await fetch('https://zefustrategie.onrender.com/articles');
@@ -27,7 +30,8 @@
 			console.log(data.metadata);
 			return { slug, ...data.metadata };
 		});
-		articles = await Promise.all(promises);
+		allArticles = await Promise.all(promises);
+		articles = allArticles;
 	}
 
 	function sortArticlesByDate(articlesList: any) {
@@ -50,6 +54,12 @@
 		} else {
 			articles = sortArticlesByDateInversed(articles);
 		}
+	}
+
+	function handleSearch() {
+		articles = allArticles.filter((article) =>
+			article.title.toLowerCase().includes(searchInput.toLowerCase())
+		);
 	}
 
 	onMount(async () => {
@@ -75,12 +85,21 @@
 			<SortAscIcon />
 		</button>
 	{:else}
-		<button
-			onclick={toggleSortOrder}
-			class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
-		>
-			<SortDescIcon />
-		</button>
+		<div class="flex flex-row gap-4">
+			<button
+				onclick={toggleSortOrder}
+				class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
+			>
+				<SortDescIcon />
+			</button>
+			<input
+				type="text"
+				placeholder="Rechercher un article"
+				bind:value={searchInput}
+				oninput={handleSearch}
+				class="mt-4 h-8 w-4/5 rounded border p-1 lg:w-1/4"
+			/>
+		</div>
 	{/if}
 	<div class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 		{#if articles.length > 0}
@@ -114,7 +133,7 @@
 				</a>
 			{/each}
 		{:else}
-			<p>Chargement des articles...</p>
+			<p>Aucun article disponible</p>
 		{/if}
 	</div>
 </div>
