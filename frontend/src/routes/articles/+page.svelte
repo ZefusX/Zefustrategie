@@ -74,7 +74,7 @@
 
 <div class="lg:mx-42 mx-4">
 	<h1
-		class="scroll-gradient bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text p-1 text-5xl font-bold text-transparent"
+		class="scroll-gradient bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text p-1 text-5xl font-black text-transparent"
 	>
 		Zefustratégie
 	</h1>
@@ -83,7 +83,7 @@
 		<div class="flex flex-row gap-4">
 			<button
 				onclick={toggleSortOrder}
-				class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
+				class="mt-4 flex h-8 w-8 items-center justify-center rounded border border-b-blue-200 bg-white/10 shadow-md backdrop-blur-md"
 			>
 				<SortAscIcon />
 			</button>
@@ -92,7 +92,7 @@
 				placeholder="Rechercher un article"
 				bind:value={searchInput}
 				oninput={handleSearch}
-				class="mt-4 h-8 w-4/5 rounded border p-1 lg:w-1/4"
+				class="mt-4 h-8 w-4/5 rounded border border-b-blue-200 p-1 lg:w-1/4"
 			/>
 		</div>
 	{:else}
@@ -128,9 +128,7 @@
 
 						<div class="flex gap-4">
 							{#each article.tags as tag}
-								<div class="rounded-xl border border-amber-200 bg-amber-200/20 p-1 px-2">
-									<p>{tag}</p>
-								</div>
+								<span class="badge preset-filled-success-500">{tag}</span>
 							{/each}
 						</div>
 						<p class="opacity-60">
@@ -148,3 +146,13 @@
 		{/if}
 	</div>
 </div>
+
+<style>
+	:global([data-mode='light'] .card) {
+		background-color: color-mix(
+			in oklab,
+			var(--color-pink-500) /* #fff = #ffffff */ 10%,
+			transparent
+		);
+	}
+</style>

@@ -28,3 +28,13 @@
 		</p>
 	</div>
 </div>
+
+<style>
+	:global([data-mode='light'] .btn) {
+		background-color: color-mix(
+			in oklab,
+			var(--color-pink-500) /* #fff = #ffffff */ 10%,
+			transparent
+		);
+	}
+</style>

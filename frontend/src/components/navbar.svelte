@@ -6,7 +6,7 @@
 
 <div class="flex w-full">
 	<div
-		class="center fixed left-1/2 my-2 mb-4 -translate-x-1/2 transform justify-center rounded-2xl bg-black/20 shadow-md backdrop-blur-md"
+		class="navbar center fixed left-1/2 my-2 mb-4 -translate-x-1/2 transform justify-center rounded-2xl bg-black/20 shadow-md backdrop-blur-md"
 	>
 		<nav class="mx-22 my-2 flex gap-12 text-xl font-semibold text-slate-300">
 			<a
@@ -69,5 +69,13 @@
 	}
 	:global([data-mode='light'] .nav-link[href='/about']:hover) {
 		color: #be185d; /* pink-700 */
+	}
+
+	:global([data-mode='light'] .navbar) {
+		background-color: color-mix(
+			in oklab,
+			var(--color-pink-500) /* #fff = #ffffff */ 10%,
+			transparent
+		);
 	}
 </style>

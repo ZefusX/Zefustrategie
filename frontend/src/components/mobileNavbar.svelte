@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="z-6 fixed flex w-full flex-col justify-center gap-12 rounded-xl bg-black/40 p-6 px-12 shadow-md backdrop-blur-md transition"
+	class="navbar z-6 fixed flex w-full flex-col justify-center gap-12 rounded-xl bg-black/40 p-6 px-12 shadow-md backdrop-blur-md transition"
 >
 	<button onclick={toggleExpanded}><Menu class="" /></button>
 	{#if isExpansed}
@@ -30,3 +30,13 @@
 		</a>
 	{/if}
 </div>
+
+<style>
+	:global([data-mode='light'] .navbar) {
+		background-color: color-mix(
+			in oklab,
+			var(--color-pink-500) /* #fff = #ffffff */ 10%,
+			transparent
+		);
+	}
+</style>
