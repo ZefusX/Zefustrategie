@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import ToggleTheme from './toggleTheme.svelte';
 	$: currentPath = $page.url.pathname;
 </script>
 
@@ -10,7 +11,7 @@
 		<nav class="mx-22 my-2 flex gap-12 text-xl font-semibold text-slate-300">
 			<a
 				href="/"
-				class="transition hover:text-blue-300 {currentPath === '/'
+				class="nav-link transition hover:text-blue-300 {currentPath === '/'
 					? 'text-white'
 					: 'text-slate-300'}"
 			>
@@ -19,7 +20,7 @@
 
 			<a
 				href="/articles"
-				class="transition hover:text-violet-300 {currentPath === '/articles'
+				class="nav-link transition hover:text-violet-300 {currentPath === '/articles'
 					? 'text-white'
 					: 'text-slate-300'}"
 			>
@@ -28,14 +29,45 @@
 
 			<a
 				href="/about"
-				class="transition hover:text-pink-300 {currentPath === '/about'
+				class="nav-link transition hover:text-pink-300 {currentPath === '/about'
 					? 'text-white'
 					: 'text-slate-300'}"
 			>
 				A propos
 			</a>
 
-			<!-- <ToggleTheme /> -->
+			<ToggleTheme />
 		</nav>
 	</div>
 </div>
+
+<style>
+	/* Thème clair : overrides en CSS natif */
+	:global([data-mode='light'] .nav-link) {
+		color: #475569; /* text-slate-600 */
+	}
+
+	:global([data-mode='light'] .nav-link:hover) {
+		color: #1d4ed8; /* hover:text-blue-700/violet-700/pink-700 customisé ci-dessous */
+	}
+
+	:global([data-mode='light'] .nav-link[href='/']) {
+		color: #0f172a; /* text-slate-900 */
+	}
+	:global([data-mode='light'] .nav-link[href='/articles']) {
+		color: #0f172a;
+	}
+	:global([data-mode='light'] .nav-link[href='/about']) {
+		color: #0f172a;
+	}
+
+	:global([data-mode='light'] .nav-link[href='/']:hover) {
+		color: #1d4ed8; /* blue-700 */
+	}
+	:global([data-mode='light'] .nav-link[href='/articles']:hover) {
+		color: #6d28d9; /* violet-700 */
+	}
+	:global([data-mode='light'] .nav-link[href='/about']:hover) {
+		color: #be185d; /* pink-700 */
+	}
+</style>

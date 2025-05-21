@@ -8,14 +8,14 @@
 		<a href="/articles">
 			<button
 				type="button"
-				class="btn rounded-xl bg-white/10 px-6 py-3 font-semibold text-white shadow-md backdrop-blur-md"
+				class="btn [data-mode=light]:text-black rounded-xl bg-white/10 px-6 py-3 font-semibold text-white shadow-md backdrop-blur-md"
 				>Découvrir</button
 			>
 		</a>
 		<a href="/about">
 			<button
 				type="button"
-				class="btn rounded-xl border border-white/10 px-6 py-3 font-semibold text-white shadow-md backdrop-blur-md"
+				class="btn [data-mode=light]:text-black rounded-xl border border-white/10 px-6 py-3 font-semibold text-white shadow-md backdrop-blur-md"
 				>A propos</button
 			>
 		</a>

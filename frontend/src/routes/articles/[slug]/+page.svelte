@@ -10,7 +10,7 @@
 <style>
 	:global(.markdown-body) {
 		background: transparent;
-		color: #e2e8f0;
+		/* color: #e2e8f0; */
 		padding: 2rem;
 		font-size: 120%;
 		font-family: 'Nunito Sans Variable', sans-serif;
@@ -104,5 +104,24 @@
 	:global(.alert.important) {
 		border-color: #f87171;
 		background-color: #7f1d1d;
+	}
+
+	:global([data-mode='light'] .markdown-body p),
+	:global([data-mode='light'] .markdown-body li) {
+		color: #424242;
+	}
+
+	:global([data-mode='light'] .markdown-body h1),
+	:global([data-mode='light'] .markdown-body h2),
+	:global([data-mode='light'] .markdown-body h3),
+	:global([data-mode='light'] .markdown-body h5),
+	:global([data-mode='light'] .markdown-body h6),
+	:global([data-mode='light'] .markdown-body h4) {
+		color: #3e3e3e; /* Bleu clair */
+		background: linear-gradient(to right, #001d75, #b02a9c); /* bleu-200 à violet-200 */
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		font-size: bold;
 	}
 </style>
