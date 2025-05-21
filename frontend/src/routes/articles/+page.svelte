@@ -57,8 +57,10 @@
 	}
 
 	function handleSearch() {
-		articles = allArticles.filter((article) =>
-			article.title.toLowerCase().includes(searchInput.toLowerCase())
+		articles = allArticles.filter(
+			(article) =>
+				article.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+				article.description.toLowerCase().includes(searchInput.toLowerCase())
 		);
 	}
 
