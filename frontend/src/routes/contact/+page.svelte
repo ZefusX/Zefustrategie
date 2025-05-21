@@ -1,5 +1,6 @@
 <script>
 	let messageContent = '';
+	let messageSubject = '';
 </script>
 
 <div class="lg:mx-42 mx-4">
@@ -20,6 +21,7 @@
 			type="text"
 			class="input rounded-xl border bg-white/10 shadow-md backdrop-blur-md"
 			placeholder="Objet du message"
+			bind:value={messageSubject}
 		/>
 	</label>
 	<label class="label p-4">
@@ -32,7 +34,7 @@
 		></textarea>
 	</label>
 	<div class="p-4">
-		<a href="mailto:zefuscode@gmail.com?&body={messageContent}">
+		<a href="mailto:zefuscode@gmail.com?subject={messageSubject}&body={messageContent}">
 			<button
 				type="button"
 				class="btn [data-mode=light]:text-black rounded-xl bg-white/10 px-4 py-1 font-semibold text-white shadow-md backdrop-blur-md"
