@@ -2,11 +2,7 @@
 title: "Transition écologique"
 description: "Une synthèse sur la TES"
 tags: ["ecole", "cours", "tes"]
-<<<<<<< HEAD
-date: "2025-05-15"
-=======
 date: "2025-05-14"
->>>>>>> 290274a94336114cd209c41035dde3cc7e0cccd0
 author: "Théo K."
 ---
 
