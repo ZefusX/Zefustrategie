@@ -10,7 +10,7 @@
 <div
 	class="navbar z-6 fixed flex w-full flex-col justify-center gap-12 rounded-xl bg-black/40 p-6 px-12 shadow-md backdrop-blur-md transition"
 >
-	<button onclick={toggleExpanded}><Menu class="" /></button>
+	<button title="menu" onclick={toggleExpanded}><Menu class="" /></button>
 	{#if isExpansed}
 		<a href="/">
 			<button class="flex flex-row justify-center gap-2">
