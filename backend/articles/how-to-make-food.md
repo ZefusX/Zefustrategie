@@ -2,7 +2,6 @@
 title: "Introduction à FastAPI"
 description: "Un guide rapide pour démarrer avec FastAPI en Python."
 tags: ["python", "api", "fastapi"]
-<<<<<<< HEAD
 date: "2025-05-18"
 =======
 date: "2025-05-15"
