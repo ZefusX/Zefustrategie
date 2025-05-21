@@ -80,12 +80,21 @@
 	</h1>
 	<hr class="mr-96 mt-6" />
 	{#if sortDateInversed}
-		<button
-			onclick={toggleSortOrder}
-			class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
-		>
-			<SortAscIcon />
-		</button>
+		<div class="flex flex-row gap-4">
+			<button
+				onclick={toggleSortOrder}
+				class="mt-4 flex h-8 w-8 items-center justify-center rounded border bg-white/10 shadow-md backdrop-blur-md"
+			>
+				<SortAscIcon />
+			</button>
+			<input
+				type="text"
+				placeholder="Rechercher un article"
+				bind:value={searchInput}
+				oninput={handleSearch}
+				class="mt-4 h-8 w-4/5 rounded border p-1 lg:w-1/4"
+			/>
+		</div>
 	{:else}
 		<div class="flex flex-row gap-4">
 			<button
