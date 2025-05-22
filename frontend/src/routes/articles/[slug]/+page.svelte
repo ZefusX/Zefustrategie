@@ -3,6 +3,12 @@
 	import 'github-markdown-css/github-markdown.css';
 </script>
 
+<div class="mx-auto max-w-[768px] rounded-xl p-8" style="max-width: 768px; margin: auto;">
+	<h1 class="text-5xl font-black">{@html data.metadata.title}</h1>
+	<p class="font-extrabold italic text-slate-300">{@html data.metadata.description}</p>
+	<hr class="mt-4" />
+</div>
+
 <article class="markdown-body" style="max-width: 768px; margin: auto;">
 	{@html data.content}
 </article>
