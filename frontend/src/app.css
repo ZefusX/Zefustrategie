@@ -63,7 +63,7 @@ hr {
 			color-mix(in oklab, var(--color-error-100) 4%, transparent) 0px,
 			transparent 40%
 		);
-	background-color: white;
+	background-color: rgb(218, 242, 250);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -102,7 +102,7 @@ hr {
 	background-image: linear-gradient(
 		to right,
 		#2c6ff6 0%,
-		/* from-blue-200 */ #4dd1ec 25%,
+		/* from-blue-200 */ #3067ce 25%,
 		/* to-purple-500 */ #24d7fe 50%,
 		#a677c5 75%,
 		#1a74e1 100%

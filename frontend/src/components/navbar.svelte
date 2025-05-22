@@ -61,13 +61,16 @@
 	}
 
 	:global([data-mode='light'] .nav-link[href='/']) {
-		color: #0f172a; /* text-slate-900 */
+		color: #464950;
 	}
 	:global([data-mode='light'] .nav-link[href='/articles']) {
-		color: #0f172a;
+		color: #464950;
 	}
 	:global([data-mode='light'] .nav-link[href='/about']) {
-		color: #0f172a;
+		color: #464950;
+	}
+	:global([data-mode='light'] .nav-link[href='/contact']) {
+		color: #464950;
 	}
 
 	:global([data-mode='light'] .nav-link[href='/']:hover) {
