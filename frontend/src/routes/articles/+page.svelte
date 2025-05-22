@@ -92,7 +92,7 @@
 				placeholder="Rechercher un article"
 				bind:value={searchInput}
 				oninput={handleSearch}
-				class="mt-4 h-8 w-4/5 rounded border border-b-blue-200 p-1 lg:w-1/4"
+				class="mt-4 h-8 w-4/5 rounded border bg-white/10 p-1 shadow-md backdrop-blur-md lg:w-1/4"
 			/>
 		</div>
 	{:else}
